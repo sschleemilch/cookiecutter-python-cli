@@ -1,8 +1,8 @@
 {
     "author_name": "Sebastian Schleemilch",
     "author_email": "sebastian.schleemilch@gmail.com",
-    "homepage": "None",
-    "documentation": "None",
+    "homepage": "https://github.com/sschleemilch/cookiecutter-python-cli",
+    "documentation": "https://github.com/sschleemilch/cookiecutter-python-cli/blob/main/README.md",
     "package_name_long": "Python CLI Boilerplate",
     "package_name": "{{ cookiecutter.package_name_long.lower().replace(' ', '_').replace('-', '_') }}",
     "package_name_cli": "{{ cookiecutter.package_name.replace('_', '-') }}",
