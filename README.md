@@ -1,4 +1,4 @@
-# Cookiecutter PyPackage
+# Cookiecutter Python Command Line Tool
 
 [Cookiecutter](https://github.com/cookiecutter/cookiecutter) template for a Python package with a visually appealing CLI interface.
 
