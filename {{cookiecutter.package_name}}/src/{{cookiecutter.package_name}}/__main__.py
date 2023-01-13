@@ -17,24 +17,24 @@ logging.basicConfig(
 
 logger = logging.getLogger("{{cookiecutter.package_name}}")
 
-def configure_run_mode(debug: bool):
-    if debug:
+def configure_run_mode(verbose: int) -> None:
+    if verbose > 2:
         logger.setLevel("DEBUG")
-    install(show_locals=debug)
+        install(show_locals=True)
+    elif verbose > 1:
+        logger.setLevel("WARNING")
+    elif verbose > 0:
+        logger.setLevel("INFO")
+    else:
+        logger.setLevel("ERROR")
 
 @click.command()
-@click.option("--debug", is_flag=True, help="Enables debug outputs.")
-@click.option("--version", "-V", is_flag=True, help="Print version and exit.")
+@click.option("-v", "--verbose", count=True, help="Verbositiy level, can be given up to 3 times (-vvv)")
+@click.version_option(__version__)
 def main(
-    version: bool = False, 
-    debug: bool = False):
-    """ main cli entry point """
+    verbose: int):
 
-    configure_run_mode(debug)
-
-    if version:
-        print(__version__)
-        return
+    configure_run_mode(verbose)
 
     logger.info("Running {{cookiecutter.package_name}}")
     logger.debug("Debugging infos")
