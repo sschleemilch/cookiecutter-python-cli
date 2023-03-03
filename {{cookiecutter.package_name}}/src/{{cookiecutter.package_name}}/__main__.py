@@ -4,7 +4,7 @@ import rich_click as click
 from rich.logging import RichHandler
 from rich.traceback import install
 
-from {{cookiecutter.package_name}} import __version__
+from . import __version__
 
 
 FORMAT = "%(message)s"
@@ -15,18 +15,18 @@ logging.basicConfig(
     handlers=[RichHandler(rich_tracebacks=True)]
 )
 
-logger = logging.getLogger("{{cookiecutter.package_name}}")
+log = logging.getLogger("{{cookiecutter.package_name}}")
 
-def configure_run_mode(verbose: int) -> None:
+def set_log_level(verbose: int) -> None:
     if verbose > 2:
-        logger.setLevel("DEBUG")
+        log.setLevel("DEBUG")
         install(show_locals=True)
     elif verbose > 1:
-        logger.setLevel("WARNING")
+        log.setLevel("INFO")
     elif verbose > 0:
-        logger.setLevel("INFO")
+        log.setLevel("WARNING")
     else:
-        logger.setLevel("ERROR")
+        log.setLevel("ERROR")
 
 @click.command()
 @click.option("-v", "--verbose", count=True, help="Verbositiy level, can be given up to 3 times (-vvv)")
@@ -34,10 +34,10 @@ def configure_run_mode(verbose: int) -> None:
 def main(
     verbose: int):
 
-    configure_run_mode(verbose)
+    set_log_level(verbose)
 
-    logger.info("Running {{cookiecutter.package_name}}")
-    logger.debug("Debugging infos")
+    log.info("Running {{cookiecutter.package_name}}")
+    log.debug("Debugging infos")
 
 if __name__ == "__main__":
     main()
