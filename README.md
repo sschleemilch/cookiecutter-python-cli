@@ -2,6 +2,8 @@
 
 [Cookiecutter](https://github.com/cookiecutter/cookiecutter) template for a Python package with a visually appealing CLI interface.
 
+![image](https://user-images.githubusercontent.com/12069137/224803133-8c6e5af6-c66c-49f4-82f3-12fc41405958.png)
+
 
 ## Features
 
