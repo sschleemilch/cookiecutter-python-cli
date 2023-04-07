@@ -45,7 +45,7 @@ python = "^3.8"
 rich = "^13.3.3"
 rich-click = "^1.6.1"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 black = "*"
 mypy = "*"
 pytest = "*"
