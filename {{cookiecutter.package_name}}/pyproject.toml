@@ -31,7 +31,6 @@ classifiers = [
     "Operating System :: Microsoft :: Windows",
     "Operating System :: MacOS",
     "Operating System :: POSIX :: Linux",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -42,26 +41,26 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.7"
-rich = "^12.5.1"
-rich-click = "^1.5.1"
+python = "^3.8"
+rich = "^13.3.3"
+rich-click = "^1.6.1"
 
 [tool.poetry.dev-dependencies]
-black = "^22.6"
-mypy = "^0.971"
-pytest = "^7.1.2"
-pytest-cov = "^3.0.0"
-pre-commit = "^2.20.0"
+black = "*"
+mypy = "*"
+pytest = "*"
+pytest-cov = "*"
+pre-commit = "*"
 
 [build-system]
-requires = ["poetry-core>=1.0.8"]
+requires = ["poetry-core>=1.5.2"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.mypy]
 files = ["src/{{cookiecutter.package_name}}"]
 show_error_codes = true
 strict = true
-enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
+enable_error_code = ["redundant-expr", "truthy-bool"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

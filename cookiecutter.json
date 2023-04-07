@@ -2,12 +2,12 @@
     "author_name": "Sebastian Schleemilch",
     "author_email": "sebastian.schleemilch@gmail.com",
     "homepage": "https://github.com/sschleemilch/cookiecutter-python-cli",
-    "documentation": "https://github.com/sschleemilch/cookiecutter-python-cli/blob/main/README.md",
+    "documentation": "{{ cookiecutter.homepage }}/blob/main/README.md",
     "package_name_long": "Python CLI Boilerplate",
     "package_name": "{{ cookiecutter.package_name_long.lower().replace(' ', '_').replace('-', '_') }}",
     "package_name_cli": "{{ cookiecutter.package_name.replace('_', '-') }}",
     "package_short_description": "Python Boilerplate for a CLI Application",
-    "version": "0.1.0",
+    "version": "1.0.0rc1",
     "git": "y",
     "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
   }
