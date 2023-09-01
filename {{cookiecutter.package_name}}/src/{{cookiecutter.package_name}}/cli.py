@@ -13,7 +13,7 @@ log = logging.getLogger("{{cookiecutter.package_name}}")
 @click.command()
 @click.option("-v", "--verbose", is_flag=True, help="Enables verbose output.")
 @click.version_option(__version__)
-def main(verbose: bool):
+def cli(verbose: bool) -> None:
 
     if verbose:
         log.setLevel(logging.DEBUG)
@@ -22,6 +22,3 @@ def main(verbose: bool):
     log.info("Running {{cookiecutter.package_name}}")
     log.debug("Debugging infos")
 
-
-if __name__ == "__main__":
-    main()

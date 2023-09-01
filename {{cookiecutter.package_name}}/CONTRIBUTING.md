@@ -50,7 +50,7 @@ pre-commit install
 Run tests with the following command:
 
 ```
-pytest --cov-report term-missing --cov={{cookiecutter.package_name}} tests/ -vv
+pytest --cov-report term-missing --cov={{cookiecutter.package_name}} -vv
 ```
 
 New code should ideally have tests and not break existing tests.
@@ -70,3 +70,9 @@ I recommend setting up black in your editor to format on save.
 
 To run black from the command line, use `black --check .` to check your formatting,
 and use `black .` to also apply all diffs.
+
+## Optional
+
+If you want to test versus more than one Python version there is a [noxfile.py](noxfile.py) that will run tests and typing checks on all supported Python versions.
+You will need to have [nox](https://nox.thea.codes/en/stable/) as well as [nox-poetry](https://github.com/cjolowicz/nox-poetry) installed on your system.
+You can then run `nox`. Make sure you are **not** in the virtual environment of the tool when doing so.

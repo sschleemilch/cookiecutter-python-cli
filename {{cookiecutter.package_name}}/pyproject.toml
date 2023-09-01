@@ -50,4 +50,4 @@ profile = "black"
 line-length = 120
 
 [tool.poetry.scripts]
-{{cookiecutter.package_name_cli}} = "{{cookiecutter.package_name}}.__main__:main"
+{{cookiecutter.package_name_cli}} = "{{cookiecutter.package_name}}.cli:cli"
