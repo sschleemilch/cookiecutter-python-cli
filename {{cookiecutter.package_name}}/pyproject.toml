@@ -20,8 +20,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-rich = "^13.3.3"
-rich-click = "^1.6.1"
+rich = "^13.7.0"
+rich-click = "^1.7.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "*"

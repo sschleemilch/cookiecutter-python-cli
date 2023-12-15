@@ -6,9 +6,11 @@ from rich.traceback import install
 
 from . import __version__
 
-logging.basicConfig(level="INFO", format="%(message)s", datefmt="[%X]", handlers=[RichHandler(rich_tracebacks=True)])
+logging.basicConfig(level="INFO", format="%(message)s",
+                    datefmt="[%X]", handlers=[RichHandler(rich_tracebacks=True)])
 
 log = logging.getLogger("{{cookiecutter.package_name}}")
+
 
 @click.command()
 @click.option("-v", "--verbose", is_flag=True, help="Enables verbose output.")
@@ -21,4 +23,3 @@ def cli(verbose: bool) -> None:
 
     log.info("Running {{cookiecutter.package_name}}")
     log.debug("Debugging infos")
-
