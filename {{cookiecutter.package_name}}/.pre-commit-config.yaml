@@ -2,7 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: check-ast
       - id: check-builtin-literals
@@ -16,6 +16,7 @@ repos:
       - id: check-vcs-permalinks
       - id: check-shebang-scripts-are-executable
       - id: trailing-whitespace
+      - id: debug-statements
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.10.0
     hooks:
@@ -25,12 +26,12 @@ repos:
       - id: rst-directive-colons
       - id: rst-inline-touching-normal
   - repo: https://github.com/hadialqattan/pycln
-    rev: v2.2.2
+    rev: v2.4.0
     hooks:
       - id: pycln
         args: [--all]
   - repo: https://github.com/psf/black
-    rev: 23.7.0
+    rev: 24.3.0
     hooks:
       - id: black
   - repo: https://github.com/PyCQA/isort
@@ -40,3 +41,13 @@ repos:
         name: isort (python)
         language_version: "3.11"
         args: ["--profile", "black"]
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v2.2.1
+    hooks:
+      - id: autoflake
+        args:
+          [--remove-all-unused-imports, --in-place, --remove-unused-variables]
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.15.2
+    hooks:
+      - id: pyupgrade
