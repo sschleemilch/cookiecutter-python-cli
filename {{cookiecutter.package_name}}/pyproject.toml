@@ -29,6 +29,7 @@ mypy = "*"
 pytest = "*"
 pytest-cov = "*"
 pre-commit = "*"
+nox-poetry =  "*"
 
 [build-system]
 requires = ["poetry-core"]

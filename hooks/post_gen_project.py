@@ -16,3 +16,6 @@ if __name__ == '__main__':
     else:
         remove_file('.gitignore')
         remove_file('.pre-commit-config.yaml')
+
+    if '{{ cookiecutter.nix }}' == 'n':
+        remove_file('shell.nix')

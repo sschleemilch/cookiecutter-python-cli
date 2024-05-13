@@ -10,6 +10,10 @@ using the [recommended method](https://python-poetry.org/docs/#installation) or 
 pip install poetry
 ```
 
+{%- if cookiecutter.nix == "y" %}
+Alternatively, since there exists a [shell.nix](./shell.nix) you can use `nix-shell` of the [nixos](https://nixos.org/) project to setup a suitable devenv.
+{%- endif %}
+
 Once Poetry is installed, install the dependencies with the following command:
 
 ```
