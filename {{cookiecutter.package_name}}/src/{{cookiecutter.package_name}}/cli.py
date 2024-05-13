@@ -23,3 +23,7 @@ def cli(verbose: bool) -> None:
 
     log.info("Running {{cookiecutter.package_name}}")
     log.debug("Debugging infos")
+
+
+def main():
+    cli(auto_envvar_prefix="{{cookiecutter.package_name}}")
