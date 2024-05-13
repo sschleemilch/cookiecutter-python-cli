@@ -24,7 +24,7 @@ rich = "^13.7.1"
 rich-click = "^1.7.4"
 
 [tool.poetry.group.dev.dependencies]
-black = "*"
+ruff = "*"
 mypy = "*"
 pytest = "*"
 pytest-cov = "*"
@@ -43,11 +43,11 @@ enable_error_code = ["redundant-expr", "truthy-bool"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
-[tool.isort]
-profile = "black"
-
-[tool.black]
+[tool.ruff]
 line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "PGH"]
 
 [tool.poetry.scripts]
 {{cookiecutter.package_name_cli}} = "{{cookiecutter.package_name}}.cli:main"

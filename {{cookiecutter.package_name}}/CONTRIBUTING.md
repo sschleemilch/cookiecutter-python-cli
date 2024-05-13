@@ -65,11 +65,10 @@ mypy --ignore-missing-imports --no-implicit-optional --warn-unreachable
 
 ### Code Formatting
 
-{{cookiecutter.package_name_long}} uses [`black`](https://github.com/psf/black) for code formatting.
-I recommend setting up black in your editor to format on save.
+{{cookiecutter.package_name_long}} uses [`ruff`](https://docs.astral.sh/ruff/) for code formatting.
+Since it is very fast it makes sense to setup your editor to format on save.
 
-To run black from the command line, use `black --check .` to check your formatting,
-and use `black .` to also apply all diffs.
+Use `ruff format` to format all files in the currenct directory
 
 ## Optional
 
