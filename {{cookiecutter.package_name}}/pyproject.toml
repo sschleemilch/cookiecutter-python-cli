@@ -51,4 +51,4 @@ line-length = 120
 select = ["E", "F", "I", "UP", "PGH"]
 
 [tool.poetry.scripts]
-{{cookiecutter.package_name_cli}} = "{{cookiecutter.package_name}}.cli:main"
+{{cookiecutter.package_name_cli}} = "{{cookiecutter.package_name}}.cli:cli"
