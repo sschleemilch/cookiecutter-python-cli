@@ -19,3 +19,4 @@ if __name__ == '__main__':
 
     if '{{ cookiecutter.nix }}' == 'n':
         remove_file('shell.nix')
+        remove_file('.envrc')

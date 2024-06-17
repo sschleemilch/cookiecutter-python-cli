@@ -19,7 +19,7 @@ license = "{{ license_ids[cookiecutter.open_source_license] }}"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 rich = "^13.7.1"
 rich-click = "^1.7.4"
 
@@ -30,6 +30,7 @@ pytest = "*"
 pytest-cov = "*"
 pre-commit = "*"
 nox-poetry =  "*"
+bump2version = "*"
 
 [build-system]
 requires = ["poetry-core"]

@@ -47,6 +47,7 @@ Pre commit hooks can be setup with:
 ```
 pre-commit install
 ```
+
 {%- endif %}
 
 ### Tests
@@ -79,3 +80,11 @@ Use `ruff format` to format all files in the currenct directory
 If you want to test versus more than one Python version there is a [noxfile.py](noxfile.py) that will run tests and typing checks on all supported Python versions.
 You will need to have [nox](https://nox.thea.codes/en/stable/) as well as [nox-poetry](https://github.com/cjolowicz/nox-poetry) installed on your system.
 You can then run `nox`. Make sure you are **not** in the virtual environment of the tool when doing so.
+
+### Versioning
+
+- This tool is using [semantic versioning](https://semver.org/spec/v2.0.0.html). [CHANGELOG.md](./CHANGELOG.md) should be updated on every source code change.
+- A new version can be bumped with the support of [bump2version](https://github.com/peritus/bumpversion) with:
+  ```bash
+  bump2version --allow-dirty <part>
+  ```

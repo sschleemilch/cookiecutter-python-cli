@@ -1,14 +1,21 @@
 {
-    "author_name": "Sebastian Schleemilch",
-    "author_email": "sebastian.schleemilch@gmail.com",
-    "package_name_long": "Python CLI Boilerplate",
-    "package_name": "{{ cookiecutter.package_name_long.lower().replace(' ', '_').replace('-', '_') }}",
-    "package_short_description": "Python Boilerplate for a CLI Application",
-    "package_name_cli": "{{ cookiecutter.package_name.replace('_', '-') }}",
-    "homepage": "https://github.com/sschleemilch/{{ cookiecutter.package_name_cli }}",
-    "documentation": "{{ cookiecutter.homepage }}/blob/main/README.md",
-    "version": "1.0.0rc1",
-    "git": "y",
-    "nix": "y",
-    "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
-  }
+  "author_name": "Someone",
+  "author_email": "someone@somewhere.com",
+  "package_name_long": "Python CLI Boilerplate",
+  "package_name": "{{ cookiecutter.package_name_long.lower().replace(' ', '_').replace('-', '_') }}",
+  "package_short_description": "Python Boilerplate for a CLI Application",
+  "package_name_cli": "{{ cookiecutter.package_name.replace('_', '-') }}",
+  "homepage": "https://github.com/user/{{ cookiecutter.package_name_cli }}",
+  "documentation": "{{ cookiecutter.homepage }}/blob/main/README.md",
+  "version": "1.0.0",
+  "git": "y",
+  "nix": "y",
+  "open_source_license": [
+    "MIT license",
+    "BSD license",
+    "ISC license",
+    "Apache Software License 2.0",
+    "GNU General Public License v3",
+    "Not open source"
+  ]
+}
