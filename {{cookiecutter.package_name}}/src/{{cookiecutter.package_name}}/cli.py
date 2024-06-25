@@ -1,16 +1,10 @@
 import logging
 
 import rich_click as click
-from rich.logging import RichHandler
 from rich.traceback import install
 from pathlib import Path
 
-from . import __version__
-
-logging.basicConfig(level="INFO", format="%(message)s",
-                    datefmt="[%X]", handlers=[RichHandler(rich_tracebacks=True)])
-
-log = logging.getLogger("{{cookiecutter.package_name}}")
+from . import __version__, log
 
 
 @click.command(context_settings={"auto_envvar_prefix": "{{cookiecutter.package_name}}"})
