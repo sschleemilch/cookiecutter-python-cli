@@ -17,3 +17,6 @@ if __name__ == "__main__":
         remove_file(".pre-commit-config.yaml")
 
     subprocess.check_call(["uv", "sync", "-U"], cwd=PROJECT_DIRECTORY)
+
+    if "{{ cookiecutter.nox }}" != "y":
+        remove_file("noxfile.py")
