@@ -9,7 +9,6 @@
   "documentation": "{{ cookiecutter.homepage }}/blob/main/README.md",
   "version": "1.0.0",
   "git": "y",
-  "nix": "y",
   "open_source_license": [
     "MIT license",
     "BSD license",

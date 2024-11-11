@@ -6,36 +6,41 @@
     'GNU General Public License v3': 'GPLv3'
 } %}
 
-[tool.poetry]
+[project]
 name = "{{cookiecutter.package_name}}"
-homepage = "{{cookiecutter.homepage}}"
-documentation = "{{cookiecutter.documentation}}"
 version = "{{cookiecutter.version}}"
 description = "{{cookiecutter.package_short_description}}"
-authors = ["{{cookiecutter.author_name}} <{{cookiecutter.author_email}}>"]
+authors = [{name = "{{cookiecutter.author_name}}", email="{{cookiecutter.author_email}}"}]
 {%- if cookiecutter.open_source_license in license_ids %}
-license = "{{ license_ids[cookiecutter.open_source_license] }}"
+license = {text = "{{ license_ids[cookiecutter.open_source_license] }}"}
 {%- endif %}
 readme = "README.md"
+dependencies = [
+    "click>=8.1.7",
+    "rich-click>=1.8.3",
+    "rich>=13.9.4",
+]
+requires-python = ">=3.10"
 
-[tool.poetry.dependencies]
-python = "^3.9"
-rich = "^13.7.1"
-rich-click = "^1.7.4"
+[project.urls]
+homepage = "{{cookiecutter.homepage}}"
+documentation = "{{cookiecutter.documentation}}"
 
-[tool.poetry.group.dev.dependencies]
-ruff = "*"
-mypy = "*"
-pytest = "*"
-pytest-cov = "*"
-pre-commit = "*"
-nox-poetry =  "*"
-bump2version = "*"
+[project.scripts]
+{{cookiecutter.package_name_cli}} = "{{cookiecutter.package_name}}.cli:cli"
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.uv]
+package = true
 
+[dependency-groups]
+dev = [
+    "mypy>=1.13.0",
+    "ruff>=0.7.3",
+    "bump2version>=1.0.1",
+    "pre-commit>=4.0.1",
+    "pytest-cov>=6.0.0",
+    "pytest>=8.3.3",
+]
 [tool.mypy]
 files = ["src/{{cookiecutter.package_name}}"]
 show_error_codes = true
@@ -49,7 +54,5 @@ testpaths = ["tests"]
 line-length = 120
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "UP", "PGH"]
+select = ["E", "F", "I", "UP", "PGH", "B", "SIM"]
 
-[tool.poetry.scripts]
-{{cookiecutter.package_name_cli}} = "{{cookiecutter.package_name}}.cli:cli"

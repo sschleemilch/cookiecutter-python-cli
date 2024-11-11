@@ -2,41 +2,33 @@
 
 ## Development Environment
 
-{{cookiecutter.package_name_long}} uses [poetry](https://python-poetry.org/docs/) for packaging and
-dependency management. To start developing with {{cookiecutter.package_name_long}}, install Poetry
-using the [recommended method](https://python-poetry.org/docs/#installation) or run:
+{{cookiecutter.package_name_long}} uses [uv](https://docs.astral.sh/uv/) for packaging and
+dependency management. To start developing with {{cookiecutter.package_name_long}}, install `uv`
+using the [recommended method](https://docs.astral.sh/uv/#getting-started).
+
+Once `uv` is installed, install the dependencies with the following command:
 
 ```
-pip install poetry
+uv sync
 ```
 
-{%- if cookiecutter.nix == "y" %}
-Alternatively, since there exists a [shell.nix](./shell.nix) you can use `nix-shell` of the [nixos](https://nixos.org/) project to setup a suitable devenv.
-{%- endif %}
-
-Once Poetry is installed, install the dependencies with the following command:
-
-```
-poetry install
-```
-
-Poetry uses virtual environments and handles those for you efficiently.
+It will create a `.venv` in the root of the project.
 
 If you want to have a shell in the virtual environment you can activate it with (for Linux/MacOS):
 
 ```
-. $(poetry env info --path)/bin/activate
+. .venv/bin/activate
 ```
 
 The package is linked in editable mode so you will not need to reinstall the package when changing something.
 
-Alternatively you can run things in the virtual environment by using a `poetry run` prefix for commands, e.g.:
+Alternatively you can run things in the virtual environment by using a `uv run` prefix for commands, e.g.:
 
 ```
-poetry run pytest
+uv run pytest
 ```
 
-**The following section commands assume you are in the poetry installed environment by either activating or prefixing commands with `poetry run`!**
+**The following section commands assume you are in the virtual environment by either activating or prefixing commands with `uv run`!**
 
 {%- if cookiecutter.git == "y" %}
 
@@ -74,12 +66,6 @@ mypy --ignore-missing-imports --no-implicit-optional --warn-unreachable
 Since it is very fast it makes sense to setup your editor to format on save.
 
 Use `ruff format` to format all files in the currenct directory
-
-## Optional
-
-If you want to test versus more than one Python version there is a [noxfile.py](noxfile.py) that will run tests and typing checks on all supported Python versions.
-You will need to have [nox](https://nox.thea.codes/en/stable/) as well as [nox-poetry](https://github.com/cjolowicz/nox-poetry) installed on your system.
-You can then run `nox`. Make sure you are **not** in the virtual environment of the tool when doing so.
 
 ### Versioning
 
