@@ -8,7 +8,7 @@
 
 [project]
 name = "{{cookiecutter.package_name}}"
-version = "{{cookiecutter.version}}"
+dynamic = ["version"]
 description = "{{cookiecutter.package_short_description}}"
 authors = [{name = "{{cookiecutter.author_name}}", email="{{cookiecutter.author_email}}"}]
 {%- if cookiecutter.open_source_license in license_ids %}
@@ -32,15 +32,22 @@ documentation = "{{cookiecutter.documentation}}"
 [tool.uv]
 package = true
 
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/{{cookiecutter.package_name}}/__init__.py"
+
 [dependency-groups]
 dev = [
     "mypy>=1.13.0",
     "ruff>=0.7.3",
-    "bump2version>=1.0.1",
     "pre-commit>=4.0.1",
     "pytest-cov>=6.0.0",
     "pytest>=8.3.3",
     "nox>=2024.10.9",
+    "hatch>=1.13.0",
 ]
 [tool.mypy]
 files = ["src/{{cookiecutter.package_name}}"]
