@@ -47,7 +47,7 @@ dev = [
     "pytest-cov>=6.0.0",
     "pytest>=8.3.3",
     "nox>=2024.10.9",
-    "hatch>=1.13.0",
+    "bump-my-version>=0.28.1"
 ]
 [tool.mypy]
 files = ["src/{{cookiecutter.package_name}}"]
@@ -64,3 +64,8 @@ line-length = 120
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "PGH", "B", "SIM"]
 
+[tool.bumpversion]
+current_version = "{{cookiecutter.version }}"
+
+[[tool.bumpversion.files]]
+filename = "./src/{{cookiecutter.package_name}}/__init__.py"
