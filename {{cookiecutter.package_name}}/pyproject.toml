@@ -41,20 +41,14 @@ path = "src/{{cookiecutter.package_name}}/__init__.py"
 
 [dependency-groups]
 dev = [
-    "mypy>=1.13.0",
-    "ruff>=0.7.3",
-    "pre-commit>=4.0.1",
-    "pytest-cov>=6.0.0",
-    "pytest>=8.3.3",
-    "nox>=2024.10.9",
-    "bump-my-version>=0.28.1"
+    "ruff",
+    "pre-commit",
+    "pytest-cov",
+    "pytest",
+    "nox",
+    "bump-my-version",
+    "ty"
 ]
-[tool.mypy]
-files = ["src/{{cookiecutter.package_name}}"]
-show_error_codes = true
-strict = true
-enable_error_code = ["redundant-expr", "truthy-bool"]
-
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 

@@ -54,10 +54,10 @@ New code should ideally have tests and not break existing tests.
 
 ### Type Checking
 
-{{cookiecutter.package_name_long}} uses type annotations throughout, and `mypy` to do the checking. Run the following to type check {{cookiecutter.package_name_long}}:
+{{cookiecutter.package_name_long}} uses type annotations throughout, and `ty` to do the checking. Run the following to type check {{cookiecutter.package_name_long}}:
 
 ```
-mypy --ignore-missing-imports --no-implicit-optional --warn-unreachable
+ty check
 ```
 
 ### Code Formatting
@@ -65,7 +65,7 @@ mypy --ignore-missing-imports --no-implicit-optional --warn-unreachable
 {{cookiecutter.package_name_long}} uses [`ruff`](https://docs.astral.sh/ruff/) for code formatting.
 Since it is very fast it makes sense to setup your editor to format on save.
 
-Use `ruff format` to format all files in the currenct directory
+Use `ruff format` to format all files in the current directory
 
 ### Versioning
 

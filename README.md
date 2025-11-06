@@ -12,4 +12,4 @@
 - State of the art Python packaging structure with `src` and `tests` assuring portability
 - [Pytest](https://docs.pytest.org/en/7.1.x/)
 - [Pre-Commit](https://pre-commit.com/) Config to simplify validation at commit time
-- Use Typing and [mypy](http://mypy-lang.org/) as a checker
+- Use Typing and [ty](https://docs.astral.sh/ty/) as a checker
