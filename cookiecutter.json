@@ -9,6 +9,7 @@
   "documentation": "{{ cookiecutter.homepage }}/blob/main/README.md",
   "version": "1.0.0",
   "git": "y",
+  "dockerfile": "y",
   "nox": "y",
   "open_source_license": [
     "MIT license",

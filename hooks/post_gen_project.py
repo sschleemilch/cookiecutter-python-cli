@@ -1,22 +1,19 @@
 #!/usr/bin/env python
-import os
 import subprocess
-
-PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
-
-
-def remove_file(filepath):
-    os.remove(os.path.join(PROJECT_DIRECTORY, filepath))
-
+from pathlib import Path
 
 if __name__ == "__main__":
     if "{{ cookiecutter.git }}" == "y":
-        subprocess.check_call(["git", "init", "-b", "main"], cwd=PROJECT_DIRECTORY)
+        _ = subprocess.check_call(["git", "init", "-b", "main"])
     else:
-        remove_file(".gitignore")
-        remove_file(".pre-commit-config.yaml")
+        Path(".gitignore").unlink()
+        Path(".pre-commit-config.yaml").unlink()
 
-    subprocess.check_call(["uv", "sync", "-U"], cwd=PROJECT_DIRECTORY)
+    _ = subprocess.check_call(["uv", "sync", "-U"])
 
     if "{{ cookiecutter.nox }}" != "y":
-        remove_file("noxfile.py")
+        Path("noxfile.py").unlink()
+
+    if "{{ cookiecutter.dockerfile }}" != "y":
+        Path("Dockerfile").unlink()
+        Path(".dockerignore").unlink()
